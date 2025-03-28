@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thạc sĩ Nguyễn Hoàng Minh Nhật - Personal Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #2c3e50;
+            color: #fff;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .nav-links li a:hover {
+            color: #3498db;
+        }
+
+        #language-switcher {
+            padding: 0.5rem;
+            border-radius: 5px;
+        }
+
+        .hero {
+            height: 100vh;
+            background: linear-gradient(to right, #3498db, #2ecc71);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            background: #fff;
+            color: #333;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background: #3498db;
+            color: #fff;
+        }
+
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .about-content {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .about-text {
+            flex: 2;
+        }
+
+        .about-content img {
+            flex: 1;
+            max-width: 300px;
+            border-radius: 10px;
+        }
+
+        ul {
+            list-style: none;
+            margin-left: 2rem;
+        }
+
+        ul li {
+            margin-bottom: 1rem;
+        }
+
+        .skills-container, .games-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .skill {
+            background: #3498db;
+            color: #fff;
+            padding: 0.75rem 1.5rem;
+            border-radius: 5px;
+        }
+
+        .game-item {
+            text-align: center;
+            background: #fff;
+            padding: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .game-item canvas {
+            border: 2px solid #2c3e50;
+            border-radius: 5px;
+        }
+
+        .game-item h3 {
+            margin-bottom: 1rem;
+        }
+
+        .game-item p {
+            margin-top: 0.5rem;
+        }
+
+        footer {
+            background: #2c3e50;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">NHMN</div>
+            <ul class="nav-links">
+                <li><a href="#home" class="lang-vi">Trang chủ</a><a href="#home" class="lang-en hidden">Home</a></li>
+                <li><a href="#about" class="lang-vi">Giới thiệu</a><a href="#about" class="lang-en hidden">About</a></li>
+                <li><a href="#education" class="lang-vi">Học vấn</a><a href="#education" class="lang-en hidden">Education</a></li>
+                <li><a href="#experience" class="lang-vi">Kinh nghiệm</a><a href="#experience" class="lang-en hidden">Experience</a></li>
+                <li><a href="#skills" class="lang-vi">Kỹ năng</a><a href="#skills" class="lang-en hidden">Skills</a></li>
+                <li><a href="#research" class="lang-vi">Nghiên cứu Khoa học</a><a href="#research" class="lang-en hidden">Scientific Research</a></li>
+                <li><a href="#papers" class="lang-vi">Bài báo đã Công bố</a><a href="#papers" class="lang-en hidden">Published Papers</a></li>
+                <li><a href="#games" class="lang-vi">Trò chơi</a><a href="#games" class="lang-en hidden">Games</a></li>
+                <li><a href="#contact" class="lang-vi">Liên hệ</a><a href="#contact" class="lang-en hidden">Contact</a></li>
+                <li>
+                    <select id="language-switcher">
+                        <option value="vi">Tiếng Việt</option>
+                        <option value="en">English</option>
+                    </select>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="lang-vi">Thạc sĩ Nguyễn Hoàng Minh Nhật</h1>
+            <h1 class="lang-en hidden">Master Nguyen Hoang Minh Nhat</h1>
+            <p class="lang-vi">Giảng viên Khoa học Máy tính & Công nghệ Phần mềm</p>
+            <p class="lang-en hidden">Lecturer in Computer Science & Software Technology</p>
+            <a href="#about" class="btn lang-vi">Tìm hiểu thêm</a>
+            <a href="#about" class="btn lang-en hidden">Learn More</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2 class="lang-vi">Giới thiệu</h2>
+        <h2 class="lang-en hidden">About Me</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p class="lang-vi">
+                    Thạc sĩ Nguyễn Hoàng Minh Nhật là một giảng viên uy tín trong lĩnh vực Khoa học Máy tính và Công nghệ Phần mềm. Với hơn 10 năm kinh nghiệm giảng dạy tại các trường đại học hàng đầu như Đại học Văn Hiến, Đại học Hutech, Đại học Huflit và Đại học Kinh tế Tài chính (UEF), Thầy đã truyền cảm hứng và đào tạo hàng trăm sinh viên trở thành những chuyên gia xuất sắc trong ngành công nghệ thông tin. Thầy sở hữu nền tảng học thuật vững chắc, kết hợp với tư duy đổi mới và phương pháp giảng dạy thực tiễn, giúp sinh viên không chỉ nắm vững lý thuyết mà còn thành thạo các kỹ năng thực hành.
+                </p>
+                <p class="lang-en hidden">
+                    Master Nguyen Hoang Minh Nhat is a distinguished lecturer in the fields of Computer Science and Software Technology. With over 10 years of teaching experience at leading universities such as Van Hien University, Hutech University, Huflit University, and the University of Economics and Finance (UEF), he has inspired and trained hundreds of students to become exceptional professionals in the IT industry. With a strong academic background, innovative mindset, and practical teaching methods, he equips students with both theoretical knowledge and hands-on skills.
+                </p>
+            </div>
+            <img src="https://via.placeholder.com/300" alt="Nguyen Hoang Minh Nhat">
+        </div>
+    </section>
+
+    <section id="education">
+        <h2 class="lang-vi">Học vấn</h2>
+        <h2 class="lang-en hidden">Education</h2>
+        <ul>
+            <li class="lang-vi">Thạc sĩ Khoa học Máy tính - Đại học [Tên trường], [Năm]</li>
+            <li class="lang-en hidden">Master of Computer Science - [University Name], [Year]</li>
+            <li class="lang-vi">Cử nhân Công nghệ Thông tin - Đại học [Tên trường], [Năm]</li>
+            <li class="lang-en hidden">Bachelor of Information Technology - [University Name], [Year]</li>
+        </ul>
+    </section>
+
+    <section id="experience">
+        <h2 class="lang-vi">Kinh nghiệm</h2>
+        <h2 class="lang-en hidden">Experience</h2>
+        <ul>
+            <li class="lang-vi">Giảng viên Khoa CNTT - Đại học Văn Hiến</li>
+            <li class="lang-en hidden">Lecturer, Faculty of IT - Van Hien University</li>
+            <li class="lang-vi">Giảng viên Khoa CNTT - Đại học Hutech</li>
+            <li class="lang-en hidden">Lecturer, Faculty of IT - Hutech University</li>
+            <li class="lang-vi">Giảng viên Khoa CNTT - Đại học Huflit</li>
+            <li class="lang-en hidden">Lecturer, Faculty of IT - Huflit University</li>
+            <li class="lang-vi">Giảng viên Khoa CNTT - Đại học Kinh tế Tài chính (UEF)</li>
+            <li class="lang-en hidden">Lecturer, Faculty of IT - University of Economics and Finance (UEF)</li>
+        </ul>
+    </section>
+
+    <section id="skills">
+        <h2 class="lang-vi">Kỹ năng</h2>
+        <h2 class="lang-en hidden">Skills</h2>
+        <div class="skills-container">
+            <div class="skill">HTML/CSS/JavaScript</div>
+            <div class="skill">Python</div>
+            <div class="skill">Java</div>
+            <div class="skill">Công nghệ Phần mềm</div>
+            <div class="skill lang-en hidden">Software Technology</div>
+            <div class="skill">Khoa học Dữ liệu</div>
+            <div class="skill lang-en hidden">Data Science</div>
+        </div>
+    </section>
+
+    <section id="research">
+        <h2 class="lang-vi">Nghiên cứu Khoa học</h2>
+        <h2 class="lang-en hidden">Scientific Research</h2>
+        <ul>
+            <li class="lang-vi">Nghiên cứu về tối ưu hóa thuật toán học máy trong xử lý dữ liệu lớn (Big Data) - 2023</li>
+            <li class="lang-en hidden">Research on optimizing machine learning algorithms for big data processing - 2023</li>
+            <li class="lang-vi">Phát triển hệ thống phần mềm thông minh ứng dụng trí tuệ nhân tạo - 2022</li>
+            <li class="lang-en hidden">Development of intelligent software systems using artificial intelligence - 2022</li>
+            <li class="lang-vi">Phân tích hiệu suất các mô hình học sâu trong nhận diện hình ảnh - 2021</li>
+            <li class="lang-en hidden">Performance analysis of deep learning models in image recognition - 2021</li>
+        </ul>
+    </section>
+
+    <section id="papers">
+        <h2 class="lang-vi">Bài báo đã Công bố</h2>
+        <h2 class="lang-en hidden">Published Papers</h2>
+        <ul>
+            <li class="lang-vi">"Ứng dụng học máy trong dự đoán xu hướng dữ liệu", Tạp chí Khoa học Công nghệ, 2023</li>
+            <li class="lang-en hidden">"Application of Machine Learning in Data Trend Prediction", Journal of Science and Technology, 2023</li>
+            <li class="lang-vi">"Phân tích hiệu quả của blockchain trong bảo mật phần mềm", Hội nghị CNTT Quốc tế, 2022</li>
+            <li class="lang-en hidden">"Analysis of Blockchain Efficiency in Software Security", International IT Conference, 2022</li>
+            <li class="lang-vi">"Mô hình học sâu cho nhận diện đối tượng", Tạp chí Công nghệ Thông tin, 2021</li>
+            <li class="lang-en hidden">"Deep Learning Model for Object Recognition", Journal of Information Technology, 2021</li>
+        </ul>
+    </section>
+
+    <section id="games">
+        <h2 class="lang-vi">Trò chơi</h2>
+        <h2 class="lang-en hidden">Games</h2>
+        <div class="games-container">
+            <div class="game-item">
+                <h3 class="lang-vi">Rắn Săn Mồi</h3>
+                <h3 class="lang-en hidden">Snake Game</h3>
+                <canvas id="snakeCanvas" width="400" height="400"></canvas>
+                <p class="lang-vi">Sử dụng phím mũi tên để di chuyển rắn, ăn thức ăn để tăng điểm!</p>
+                <p class="lang-en hidden">Use arrow keys to move the snake, eat food to score points!</p>
+                <p id="snakeScore" class="lang-vi">Điểm: 0 - Level: 1</p>
+                <p id="snakeScoreEn" class="lang-en hidden">Score: 0 - Level: 1</p>
+            </div>
+            <div class="game-item">
+                <h3 class="lang-vi">Xếp Gạch</h3>
+                <h3 class="lang-en hidden">Tetris Game</h3>
+                <canvas id="tetrisCanvas" width="240" height="400"></canvas>
+                <p class="lang-vi">Sử dụng phím mũi tên để di chuyển, phím Space để xoay gạch!</p>
+                <p class="lang-en hidden">Use arrow keys to move, Spacebar to rotate blocks!</p>
+                <p id="tetrisScore" class="lang-vi">Điểm: 0 - Level: 1</p>
+                <p id="tetrisScoreEn" class="lang-en hidden">Score: 0 - Level: 1</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2 class="lang-vi">Liên hệ</h2>
+        <h2 class="lang-en hidden">Contact</h2>
+        <p class="lang-vi">Email: nguyenhoangminhnhat@example.com</p>
+        <p class="lang-en hidden">Email: nguyenhoangminhnhat@example.com</p>
+        <p class="lang-vi">Điện thoại: +84 123 456 789</p>
+        <p class="lang-en hidden">Phone: +84 123 456 789</p>
+    </section>
+
+    <footer>
+        <p class="lang-vi">© 2025 Nguyễn Hoàng Minh Nhật. Bảo lưu mọi quyền.</p>
+        <p class="lang-en hidden">© 2025 Nguyen Hoang Minh Nhat. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Chuyển đổi ngôn ngữ
+        document.getElementById('language-switcher').addEventListener('change', function() {
+            const lang = this.value;
+            document.querySelectorAll('.lang-vi').forEach(el => el.classList.toggle('hidden', lang === 'en'));
+            document.querySelectorAll('.lang-en').forEach(el => el.classList.toggle('hidden', lang === 'vi'));
+        });
+
+        // --- Snake Game ---
+        const snakeCanvas = document.getElementById('snakeCanvas');
+        const snakeCtx = snakeCanvas.getContext('2d');
+        let snake = [{ x: 10, y: 10 }];
+        let food = { x: 15, y: 15 };
+        let dx = 0, dy = 0;
+        let snakeScore = 0, snakeLevel = 1;
+        const snakeGridSize = 20;
+
+        function drawSnake() {
+            snakeCtx.fillStyle = '#2ecc71';
+            snake.forEach(segment => snakeCtx.fillRect(segment.x * snakeGridSize, segment.y * snakeGridSize, snakeGridSize - 2, snakeGridSize - 2));
+        }
+
+        function drawFood() {
+            snakeCtx.fillStyle = '#e74c3c';
+            snakeCtx.fillRect(food.x * snakeGridSize, food.y * snakeGridSize, snakeGridSize - 2, snakeGridSize - 2);
+        }
+
+        function moveSnake() {
+            const head = { x: snake[0].x + dx, y: snake[0].y + dy };
+            snake.unshift(head);
+
+            if (head.x === food.x && head.y === food.y) {
+                snakeScore += 10;
+                if (snakeScore % 50 === 0 && snakeLevel < 9) snakeLevel++;
+                food = { x: Math.floor(Math.random() * 20), y: Math.floor(Math.random() * 20) };
+            } else {
+                snake.pop();
+            }
+
+            if (head.x < 0 || head.x >= 20 || head.y < 0 || head.y >= 20 || snake.slice(1).some(s => s.x === head.x && s.y === head.y)) {
+                snake = [{ x: 10, y: 10 }];
+                dx = 0; dy = 0;
+                snakeScore = 0;
+                snakeLevel = 1;
+            }
+
+            snakeCtx.clearRect(0, 0, snakeCanvas.width, snakeCanvas.height);
+            drawSnake();
+            drawFood();
+            document.getElementById('snakeScore').textContent = `Điểm: ${snakeScore} - Level: ${snakeLevel}`;
+            document.getElementById('snakeScoreEn').textContent = `Score: ${snakeScore} - Level: ${snakeLevel}`;
+            setTimeout(moveSnake, 1000 / (5 + snakeLevel));
+        }
+
+        document.addEventListener('keydown', e => {
+            switch (e.key) {
+                case 'ArrowUp': if (dy === 0) { dx = 0; dy = -1; } break;
+                case 'ArrowDown': if (dy === 0) { dx = 0; dy = 1; } break;
+                case 'ArrowLeft': if (dx === 0) { dx = -1; dy = 0; } break;
+                case 'ArrowRight': if (dx === 0) { dx = 1; dy = 0; } break;
+            }
+        });
+
+        moveSnake();
+
+        // --- Tetris Game ---
+        const tetrisCanvas = document.getElementById('tetrisCanvas');
+        const tetrisCtx = tetrisCanvas.getContext('2d');
+        const tetrisGridSize = 20;
+        const tetrisRows = 20, tetrisCols = 12;
+        let tetrisBoard = Array(tetrisRows).fill().map(() => Array(tetrisCols).fill(0));
+        let tetrisScore = 0, tetrisLevel = 1;
+
+        const pieces = [
+            [[1, 1, 1, 1]], // I
+            [[1, 1], [1, 1]], // O
+            [[1, 1, 1], [0, 1, 0]], // T
+            [[1, 1, 1], [1, 0, 0]], // L
+            [[1, 1, 1], [0, 0, 1]] // J
+        ];
+
+        let currentPiece = { shape: pieces[Math.floor(Math.random() * pieces.length)], x: 5, y: 0 };
+
+        function drawBoard() {
+            tetrisCtx.clearRect(0, 0, tetrisCanvas.width, tetrisCanvas.height);
+            tetrisBoard.forEach((row, y) => row.forEach((val, x) => {
+                if (val) {
+                    tetrisCtx.fillStyle = '#3498db';
+                    tetrisCtx.fillRect(x * tetrisGridSize, y * tetrisGridSize, tetrisGridSize - 1, tetrisGridSize - 1);
+                }
+            }));
+        }
+
+        function drawPiece() {
+            tetrisCtx.fillStyle = '#e67e22';
+            currentPiece.shape.forEach((row, y) => row.forEach((val, x) => {
+                if (val) tetrisCtx.fillRect((currentPiece.x + x) * tetrisGridSize, (currentPiece.y + y) * tetrisGridSize, tetrisGridSize - 1, tetrisGridSize - 1);
+            }));
+        }
+
+        function collide() {
+            return currentPiece.shape.some((row, y) => row.some((val, x) => val && (currentPiece.y + y >= tetrisRows || currentPiece.x + x < 0 || currentPiece.x + x >= tetrisCols || tetrisBoard[currentPiece.y + y][currentPiece.x + x])));
+        }
+
+        function merge() {
+            currentPiece.shape.forEach((row, y) => row.forEach((val, x) => {
+                if (val) tetrisBoard[currentPiece.y + y][currentPiece.x + x] = 1;
+            }));
+        }
+
+        function clearLines() {
+            let linesCleared = 0;
+            tetrisBoard = tetrisBoard.filter(row => {
+                if (row.every(val => val)) {
+                    linesCleared++;
+                    return false;
+                }
+                return true;
+            });
+            while (tetrisBoard.length < tetrisRows) tetrisBoard.unshift(Array(tetrisCols).fill(0));
+            tetrisScore += linesCleared * 100;
+            if (tetrisScore % 500 === 0 && tetrisLevel < 9) tetrisLevel++;
+        }
+
+        function dropPiece() {
+            currentPiece.y++;
+            if (collide()) {
+                currentPiece.y--;
+                merge();
+                clearLines();
+                currentPiece = { shape: pieces[Math.floor(Math.random() * pieces.length)], x: 5, y: 0 };
+                if (collide()) {
+                    tetrisBoard = Array(tetrisRows).fill().map(() => Array(tetrisCols).fill(0));
+                    tetrisScore = 0;
+                    tetrisLevel = 1;
+                }
+            }
+            drawBoard();
+            drawPiece();
+            document.getElementById('tetrisScore').textContent = `Điểm: ${tetrisScore} - Level: ${tetrisLevel}`;
+            document.getElementById('tetrisScoreEn').textContent = `Score: ${tetrisScore} - Level: ${tetrisLevel}`;
+            setTimeout(dropPiece, 1000 / (1 + tetrisLevel));
+        }
+
+        document.addEventListener('keydown', e => {
+            if (e.key === 'ArrowLeft' && !collide()) currentPiece.x--;
+            if (e.key === 'ArrowRight' && !collide()) currentPiece.x++;
+            if (e.key === 'ArrowDown') dropPiece();
+            if (e.key === ' ') {
+                const newShape = currentPiece.shape[0].map((_, i) => currentPiece.shape.map(row => row[i]).reverse());
+                const oldShape = currentPiece.shape;
+                currentPiece.shape = newShape;
+                if (collide()) currentPiece.shape = oldShape;
+            }
+            drawBoard();
+            drawPiece();
+        });
+
+        dropPiece();
+    </script>
+</body>
+</html>
